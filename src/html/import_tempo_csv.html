@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css" />
+    <base target="_top" />
+    <style>
+      .branding-below {
+        bottom: 56px;
+        top: 0;
+      }
+    </style>
+    <script src="https://raw.githubusercontent.com/mholt/PapaParse/master/papaparse.min.js"></script>
+  </head>
+
+  <body>
+    <div class="sidebar branding-below">
+      <form id="myform">
+        <div class="block form-group">
+          <input type="file" accept="text/csv" id="csv" name="csv" />
+        </div>
+
+        <div class="block">
+          <button type="submit" class="action">Submit</button>
+        </div>
+      </form>
+      <script>
+        document.querySelector('#myform').addEventListener('submit', function(e) {
+          e.preventDefault(); //stop form from submitting
+          google.script.run.addNewItem(this);
+          //google.script.host.close(); //close this dialogbox
+        });
+      </script>
+    </div>
+
+    <div class="sidebar bottom">
+      <span class="gray">Time Tracking App by OceanoBe</span>
+    </div>
+  </body>
+</html>
