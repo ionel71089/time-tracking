@@ -41,6 +41,7 @@ function parseValues(values) {
   }
 
   const rows = getRows(values, Columns).map(stripTime);
+  // Logger.log(JSON.stringify(rows));
   const rowsByUser = groupBy(rows, 'fullName');
   const rowsByUserByDay = objectMap(rowsByUser, function(userLogs) {
     const workByDate = groupBy(userLogs, 'workDate');

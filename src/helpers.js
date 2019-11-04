@@ -1,15 +1,14 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable func-names */
-
 function objectMap(object, mapFn) {
-  return Object.keys(object).reduce(function(result, key) {
+  return Object.keys(object).reduce((acc, key) => {
+    const result = acc;
     result[key] = mapFn(object[key]);
     return result;
   }, {});
 }
 
 function groupBy(xs, key) {
-  return xs.reduce(function(rv, x) {
+  return xs.reduce((acc, x) => {
+    const rv = acc;
     (rv[x[key]] = rv[x[key]] || []).push(x);
     return rv;
   }, {});
