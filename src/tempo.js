@@ -8,6 +8,7 @@
 
 import Papa from 'papaparse';
 import { objectMap, groupBy } from './helpers';
+import importWorkLog from './import';
 
 function getRows(values, columns) {
   const rows = [];
@@ -65,8 +66,7 @@ function processTempoCSV(formData) {
   csvData.shift();
   const data = parseValues(csvData);
 
-  const ui = SpreadsheetApp.getUi();
-  ui.alert(JSON.stringify(data));
+  importWorkLog(data);
 }
 
 export default processTempoCSV;

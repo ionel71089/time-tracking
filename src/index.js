@@ -1,3 +1,6 @@
+/* eslint-disable radix */
+/* eslint-disable guard-for-in */
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable prefer-const */
 import processTempoCSV from './tempo';
 
@@ -20,18 +23,7 @@ function showSidebarImportFromTempoCsv() {
   SpreadsheetApp.getUi().showSidebar(htmlOutput);
 }
 
-function test() {
-  let ui = SpreadsheetApp.getUi();
-  let sheet = SpreadsheetApp.getActiveSheet();
-  let namedRanges = sheet.getNamedRanges();
-  let employees = namedRanges.find(o => o.getName() === 'Oct2019employees');
-  // let days = namedRanges.find(o => o.getName() === 'Oct2019days');
-  let employeesRange = employees.getRange().getA1Notation();
-  // let daysRange = ui.alert(days.getRange().getA1Notation());
-
-  ui.alert(employeesRange);
-  sheet.getRange(employeesRange).activate();
-}
+function test() {}
 
 global.onOpen = onOpen;
 global.showSidebarImportFromTempoCsv = showSidebarImportFromTempoCsv;

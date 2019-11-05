@@ -26,6 +26,7 @@
     "apps-script"
   ],
   "dependencies": {
+    "dayjs": "^1.8.16",
     "lodash": "^4.17.15",
     "papaparse": "^5.1.0"
   },
